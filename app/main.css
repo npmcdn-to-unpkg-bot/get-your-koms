@@ -1,0 +1,27 @@
+/* Bootstrap Customizations */
+.btn-success {
+  background-color: #1E8BC3;
+  border-color: #1E8BC3;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,
+.btn-success:active.focus, .btn-success.focus, .btn-success:active:focus{
+  background-color: #186f9a;
+  border-color: #186f9a;
+}
+
+.btn-danger {
+  background-color: #BDC3C7;
+  border-color: #BDC3C7;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,
+.btn-danger:active.focus, .btn-danger.focus, .btn-danger:active:focus{
+  background-color: #acb4b9;
+  border-color: #acb4b9;
+}
+
+/* Custom Styles */
+body {
+  background-color: #f7f7f7;
+}
