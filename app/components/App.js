@@ -1,14 +1,16 @@
 var React = require('react');
 require('../main.css');
+import Dashboard from '../components/Dashboard';
 
 const App = React.createClass({
   render() {
     return (
-      <div className='main-container'>
+      <div>
+        <Dashboard />
         {React.cloneElement(this.props.children, {key: this.props.location.pathname})}
       </div>
     );
-  }
+  },
 });
 
 module.exports = App;

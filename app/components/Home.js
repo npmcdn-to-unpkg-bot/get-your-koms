@@ -9,7 +9,7 @@ const Home = React.createClass({
       <Welcome>
         <h1>Welcome</h1>
         <p className='lead'>Welcome Message</p>
-        <Link to='/pgOne'>
+        <Link to='/KOMs'>
           <button type='button' className='btn btn-lg btn-success'>Get Started</button>
         </Link>
       </Welcome>

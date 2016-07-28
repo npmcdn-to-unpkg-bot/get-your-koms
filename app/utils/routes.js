@@ -1,19 +1,21 @@
-const React = require('react');
-const ReactRouter = require('react-router');
-const Router = ReactRouter.Router;
-const Route = ReactRouter.Route;
-const IndexRoute = ReactRouter.IndexRoute;
-const hashHistory = ReactRouter.hashHistory;
-const App = require('../components/App');
-const Home = require('../components/Home');
-const PgOneContainer = require('../containers/PgOneContainer');
+import React from 'react';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import App from '../components/App';
+import Home from '../components/Home';
+import KomContainer from '../containers/KomContainer';
+
+// 404 Route
+const NotFound = () => (
+  <h1>404.. This page is not found!</h1>
+);
 
 const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="pgOne" header="Page One" component={PgOneContainer} />
+      <Route path="KOMs" header="KOM Map!" component={KomContainer} />
     </Route>
+    <Route path="*" component={NotFound} />
   </Router>
 );
 

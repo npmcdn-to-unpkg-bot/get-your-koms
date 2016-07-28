@@ -1,7 +1,7 @@
 const React = require('react');
-const Prompt = require('../components/PgOne');
+const Prompt = require('../components/KOMs');
 
-const PgOneContainer = React.createClass({
+const KomContainer = React.createClass({
   // Page logic would go here
   /*
   getInitialState() {
@@ -30,4 +30,4 @@ const PgOneContainer = React.createClass({
   },
 });
 
-module.exports = PgOneContainer;
+module.exports = KomContainer;

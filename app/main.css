@@ -10,18 +10,7 @@
   border-color: #186f9a;
 }
 
-.btn-danger {
-  background-color: #BDC3C7;
-  border-color: #BDC3C7;
-}
-
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,
-.btn-danger:active.focus, .btn-danger.focus, .btn-danger:active:focus{
-  background-color: #acb4b9;
-  border-color: #acb4b9;
-}
-
 /* Custom Styles */
-body {
-  background-color: #f7f7f7;
+html, body {
+  background-color: #000;
 }
