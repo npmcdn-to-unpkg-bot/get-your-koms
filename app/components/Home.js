@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import styles from '../styles';
 
-const Home = React.createClass({
+class Home extends React.Component{
   render() {
     return (
       <div className="jumbotron col-xs-12 text-xs-center" style={styles.transparentBg}>
@@ -13,7 +13,7 @@ const Home = React.createClass({
         </Link>
       </div>
     );
-  },
-});
+  }
+}
 
 export default Home;

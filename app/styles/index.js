@@ -16,9 +16,6 @@ const styles = {
   bootstrapGray: {
     color: '#373A3C',
   },
-  dashHeight: {
-    height: '80px',
-  },
 };
 
 export default styles;
