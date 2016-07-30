@@ -10,7 +10,21 @@
   border-color: #186f9a;
 }
 
+.full-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Custom Styles */
 html, body {
+  height: 100%;
+  width: 100%;
   background-color: #000;
+}
+
+/* Styles for Map */
+#app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }

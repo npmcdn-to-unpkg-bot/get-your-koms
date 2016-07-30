@@ -1,16 +1,23 @@
-var React = require('react');
+import React from 'react';
 require('../main.css');
-import Dashboard from '../components/Dashboard';
+
+const divStyle = {
+  padding: 0,
+  margin: 0,
+};
 
 const App = React.createClass({
   render() {
     return (
       <div>
-        <Dashboard />
-        {React.cloneElement(this.props.children, {key: this.props.location.pathname})}
+        <div className="container-fluid">
+          <div className="row full-row">
+            {this.props.children}
+          </div>
+        </div>
       </div>
     );
   },
 });
 
-module.exports = App;
+export default App;
