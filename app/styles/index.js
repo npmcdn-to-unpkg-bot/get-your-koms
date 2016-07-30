@@ -2,15 +2,23 @@ const styles = {
   transparentBg: {
     background: 'transparent',
   },
-  space: {
-    marginTop: '25px',
-  },
-  image: {
-    maxWidth: '200px',
-  },
   bgOffWhite: {
     backgroundColor: '#f2f2f2',
   },
+  fullWidth: {
+    height: '100%',
+    width: '100%',
+    overflow: 'hidden',
+    marginLeft: 0,
+    marginRight: 0,
+    padding: 0,
+  },
+  bootstrapGray: {
+    color: '#373A3C',
+  },
+  dashHeight: {
+    height: '80px',
+  },
 };
 
-module.exports = styles;
+export default styles;

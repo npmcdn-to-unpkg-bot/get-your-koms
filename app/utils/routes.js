@@ -1,22 +1,33 @@
+
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+
+// Layouts
 import App from '../components/App';
+import Dashboard from '../components/Dashboard';
+
+// Pages
 import Home from '../components/Home';
-import KomContainer from '../containers/KomContainer';
+import KOMs from '../components/KOMs';
 
 // 404 Route
 const NotFound = () => (
   <h1>404.. This page is not found!</h1>
 );
 
-const routes = (
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="KOMs" header="KOM Map!" component={KomContainer} />
+export default (
+  <Router history={browserHistory}>
+    <Route component={App}>
+      <Route path="/" component={Home} />
+
+      <Route path="KOMs">
+        <Route component={Dashboard}>
+          <IndexRoute component={KOMs} />
+        </Route>
+      </Route>
+
+      <Route path="*" component={NotFound} />
+
     </Route>
-    <Route path="*" component={NotFound} />
   </Router>
 );
-
-module.exports = routes;

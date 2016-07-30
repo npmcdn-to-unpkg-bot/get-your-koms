@@ -1,6 +1,5 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const routes = require('./utils/routes');
+import ReactDOM from 'react-dom';
+import routes from './utils/routes';
 
 ReactDOM.render(
   routes,

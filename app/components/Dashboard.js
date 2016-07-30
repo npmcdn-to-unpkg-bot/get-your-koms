@@ -1,14 +1,25 @@
-const React = require('react');
+import React from 'react';
 
-const Dashboard = React.createClass({
+const divStyle = {
+  height: '80px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
+class Dashboard extends React.Component{
   render() {
     return (
-      <div className="text-center">
-        <h1>Dashboard</h1>
-        <p className="lead">Strava Dashboard</p>
+      <div >
+        <div className="row" id="dashAnchor" style={divStyle}>
+          <h3 className="text-xs-center">Dashboard that has some buttons</h3>
+        </div>
+        <div className="row" id="mapAnchor">
+          {this.props.children}
+        </div>
       </div>
     );
-  },
-});
+  }
+}
 
-module.exports = Dashboard;
+export default Dashboard;
