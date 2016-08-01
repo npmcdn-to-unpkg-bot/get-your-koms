@@ -1,12 +1,7 @@
 import React from 'react';
 require('../main.css');
 
-const divStyle = {
-  padding: 0,
-  margin: 0,
-};
-
-const App = React.createClass({
+class App extends React.Component{
   render() {
     return (
       <div>
@@ -17,7 +12,7 @@ const App = React.createClass({
         </div>
       </div>
     );
-  },
-});
+  }
+}
 
 export default App;

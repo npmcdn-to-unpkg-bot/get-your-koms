@@ -8,7 +8,7 @@ class Home extends React.Component{
       <div className="jumbotron col-xs-12 text-xs-center" style={styles.transparentBg}>
         <h1>Home Page</h1>
         <p className="lead">Welcome Message</p>
-        <Link to="/KOMs">
+        <Link to="/Map">
           <button type="button" className="btn btn-lg btn-success">Get Started</button>
         </Link>
       </div>

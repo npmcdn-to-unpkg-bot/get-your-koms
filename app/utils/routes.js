@@ -8,7 +8,7 @@ import Dashboard from '../components/Dashboard';
 
 // Pages
 import Home from '../components/Home';
-import KOMs from '../components/KOMs';
+import Basemap from '../containers/MapContainer';
 
 // 404 Route
 const NotFound = () => (
@@ -20,9 +20,9 @@ export default (
     <Route component={App}>
       <Route path="/" component={Home} />
 
-      <Route path="KOMs">
+      <Route path="Map">
         <Route component={Dashboard}>
-          <IndexRoute component={KOMs} />
+          <IndexRoute component={Basemap} />
         </Route>
       </Route>
 
