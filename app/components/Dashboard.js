@@ -1,7 +1,8 @@
 import React from 'react';
+import Cards from './Cards';
 
 const divStyle = {
-  height: '80px',
+  height: '125px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -12,7 +13,7 @@ class Dashboard extends React.Component{
     return (
       <div >
         <div className="row" id="dashAnchor" style={divStyle}>
-          <h3 className="text-xs-center">Dashboard that has some buttons</h3>
+          <Cards />
         </div>
         <div className="row" id="mapAnchor">
           {this.props.children}
