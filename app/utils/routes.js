@@ -20,11 +20,8 @@ export default (
     <Route component={App}>
       <Route path="/" component={Home} />
 
-      <Route path="Map">
-        <Route component={Dashboard}>
-          <IndexRoute component={Basemap} />
-        </Route>
-      </Route>
+      <Route path="Map" component={Basemap} />
+
 
       <Route path="*" component={NotFound} />
 

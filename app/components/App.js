@@ -1,18 +1,26 @@
-import React from 'react';
-require('../main.css');
+import React, { PropTypes } from 'react';
+import '../main.css';
 
-class App extends React.Component{
-  render() {
-    return (
-      <div>
-        <div className="container-fluid">
-          <div className="row full-row">
-            {this.props.children}
-          </div>
+const divStyle = {
+  paddingLeft: 0,
+  paddingRight: 0,
+}
+
+const App = (props) => {
+  return (
+    <div>
+      <div className="container-fluid" style={divStyle}>
+        <div className="row full-row">
+          {props.children}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+App.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 
 export default App;

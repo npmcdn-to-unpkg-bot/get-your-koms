@@ -5,7 +5,7 @@ import Point from './Point';
 
 const divStyle = {
   // window height minus dashboard
-  height: (window.innerHeight - 125) + 'px',
+  height: `${window.innerHeight}px`,
   backgroundColor: '#111',
 };
 
@@ -13,7 +13,7 @@ const divStyle = {
 function listenWindowResize(mapId) {
   window.addEventListener('resize', () => {
     const mapDiv = document.getElementById(mapId);
-    mapDiv.style.height = (window.innerHeight - 125) + 'px';
+    mapDiv.style.height = `${window.innerHeight}px`;
   });
 }
 

@@ -19,6 +19,7 @@
     }
   },
   "rules": {
-    "vars-on-top": "warn"
+    "vars-on-top": "warn",
+    "arrow-body-style": "off"
   }
 }
