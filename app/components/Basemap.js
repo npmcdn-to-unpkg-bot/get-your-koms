@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
 
 import Point from './Point';
+import BtnGrp from './BtnGrp';
 
 const divStyle = {
   // window height minus dashboard
@@ -33,10 +34,13 @@ PointList.propTypes = {
 const Basemap = (props) => {
   listenWindowResize(props.divId);
   return (
-    <Map id={props.divId} center={props.center} zoom={props.zoom} style={divStyle}>
-      <TileLayer attribution={props.attribution} url={props.url} />
-      <PointList points={props.coordinates} />
-    </Map>
+    <div>
+      <BtnGrp />
+      <Map id={props.divId} center={props.center} zoom={props.zoom} style={divStyle}>
+        <TileLayer attribution={props.attribution} url={props.url} />
+        <PointList points={props.coordinates} />
+      </Map>
+    </div>
   );
 };
 
