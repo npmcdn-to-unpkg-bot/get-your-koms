@@ -1,7 +1,19 @@
 import React from 'react';
 import Basemap from '../components/Basemap';
 
-import API from '../utils/api';
+import Requests from '../utils/requests';
+
+function mapKOMs(arr) {
+  const komCoords = [];
+  arr.map((kom) => {
+    const komObj = {
+      id: kom.id,
+      latLon: kom.segment.start_latlng,
+    };
+    komCoords.push(komObj);
+  });
+  return komCoords;
+}
 
 class MapContainer extends React.Component {
   constructor() {
@@ -13,12 +25,10 @@ class MapContainer extends React.Component {
       coordinates: [],
     };
   }
-
-  componentDidMount() {
-
-  }
   handleKomClick() {
-    this.setState(API.getKOMs());
+    Requests.getKOMs().then((data) => {
+      this.setState({ coordinates: mapKOMs(data.data) });
+    });
   }
   render() {
     return (

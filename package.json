@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --inline",
     "dist": "webpack",
-    "deploy": "babel server/server.es6.js --out-file server.js",
+    "deploy": "babel server/server.es6.js --presets es2015 --out-file server.js",
     "start": "node server.js"
   },
   "dependencies": {

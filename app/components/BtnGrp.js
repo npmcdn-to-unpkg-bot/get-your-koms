@@ -13,8 +13,8 @@ const BtnGrp = (props) => {
   return (
     <div className="btn-group" role="group" aria-label="Strava Controls" style={divStyle}>
       <button type="button" className="btn btn-secondary" onClick={props.getData}>KOMs</button>
-      <button type="button" className="btn btn-secondary">Races</button>
-      <button type="button" className="btn btn-secondary">Longest</button>
+      <button type="button" className="btn btn-secondary" disabled>Races</button>
+      <button type="button" className="btn btn-secondary" disabled>Longest</button>
     </div>
   );
 };
