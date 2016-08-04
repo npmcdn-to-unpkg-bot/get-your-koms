@@ -35,7 +35,7 @@ const Basemap = (props) => {
   listenWindowResize(props.divId);
   return (
     <div>
-      <BtnGrp />
+      <BtnGrp getData={props.queryAPI} />
       <Map id={props.divId} center={props.center} zoom={props.zoom} style={divStyle}>
         <TileLayer attribution={props.attribution} url={props.url} />
         <PointList points={props.coordinates} />
@@ -45,6 +45,7 @@ const Basemap = (props) => {
 };
 
 Basemap.propTypes = {
+  queryAPI: PropTypes.func.isRequired,
   divId: PropTypes.string.isRequired,
   center: PropTypes.array.isRequired,
   zoom: PropTypes.number.isRequired,

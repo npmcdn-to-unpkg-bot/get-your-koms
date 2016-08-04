@@ -1,23 +1,29 @@
 import React from 'react';
 import Basemap from '../components/Basemap';
 
+import API from '../utils/api';
+
 class MapContainer extends React.Component {
   constructor() {
     super();
+    this.handleKomClick = this.handleKomClick.bind(this);
     this.state = {
       center: [40, -76],
       zoom: 12,
-      coordinates: [{ id: 1, latLon: [40, -76.1] }, { id: 2, latLon: [40, -76.2] }, { id: 3, latLon: [40, -76.3] }],
+      coordinates: [],
     };
   }
+
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ coordinates: [{ id: 1, latLon: [40.1, -76.1] }, { id: 2, latLon: [40.1, -76.2] }, { id: 3, latLon: [40.1, -76.3] }] });
-    }, 4000);
+
+  }
+  handleKomClick() {
+    this.setState(API.getKOMs());
   }
   render() {
     return (
       <Basemap
+        queryAPI={this.handleKomClick}
         divId={'map'}
         center={this.state.center}
         zoom={this.state.zoom}
