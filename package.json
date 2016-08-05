@@ -16,8 +16,8 @@
     "babel:server": "babel server/server.es6.js --presets es2015 --out-file dist/server.js",
     "babel:external": "babel external/Strava.es6.js --presets es2015 --out-file dist/strava.js",
     "compile": "webpack --config ./webpack.prod.config.js --progress --profile --colors",
-    "dist:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && node dist/server.js",
-    "deploy:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile",
+    "deploy:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && node dist/server.js",
+    "deploy": "npm run clean && npm run babel:server && npm run babel:external && npm run compile",
     "start": "node public/server.js"
   },
   "dependencies": {

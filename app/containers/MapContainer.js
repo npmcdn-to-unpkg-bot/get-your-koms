@@ -41,7 +41,7 @@ class MapContainer extends React.Component {
         divId={'map'}
         center={this.state.center}
         zoom={this.state.zoom}
-        url={'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'}
+        url={'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png'}
         attribution={'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'}
         coordinates={this.state.coordinates}
       />
