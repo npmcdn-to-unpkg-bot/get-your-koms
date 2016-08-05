@@ -6,6 +6,7 @@ const btnStyle = {
   borderRadius: '3rem',
   paddingLeft: '4rem',
   paddingRight: '4rem',
+  outline: '#000',
 };
 
 class Home extends React.Component{

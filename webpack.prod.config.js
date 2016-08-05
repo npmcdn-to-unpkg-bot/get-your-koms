@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  public: path.join(__dirname, 'public'),
+  public: path.join(__dirname, 'dist/public'),
 };
 
 module.exports = {

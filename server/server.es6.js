@@ -4,12 +4,14 @@ import express from 'express';
 
 // Import env vars
 import dotenv from 'dotenv';
+
+// Handle dev vs production path
 dotenv.config();
 
 const app = express();
 
 // Import Strava API Handling
-import Strava from './external/Strava';
+import Strava from './strava';
 
 // ==================
 // ROUTE API REQUESTS

@@ -2,12 +2,19 @@
 .btn-success {
   background-color: #1E8BC3;
   border-color: #1E8BC3;
+  border-radius: 3rem;
 }
 
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-primary.active, .open .dropdown-toggle.btn-primary,
 .btn-success:active.focus, .btn-success.focus, .btn-success:active:focus{
   background-color: #186f9a;
   border-color: #186f9a;
+  border-radius: 3rem;
+}
+
+.btn:active:focus {
+  border-radius: 3rem;
+  outline-color: #333;
 }
 
 .full-row {

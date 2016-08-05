@@ -11,15 +11,14 @@
   "homepage": "",
   "main": "server.js",
   "scripts": {
-    "clean": "rimraf public/*.css && rimraf public/*.js",
+    "clean": "rimraf dist/public/*.css && rimraf dist/public/*.js",
     "dev": "webpack-dev-server --progress --inline --colors",
-    "babel:server": "babel server/server.es6.js --presets es2015 --out-file server.js",
-    "babel:external": "babel external/Strava.es6.js --presets es2015 --out-file external/Strava.js",
+    "babel:server": "babel server/server.es6.js --presets es2015 --out-file dist/server.js",
+    "babel:external": "babel external/Strava.es6.js --presets es2015 --out-file dist/strava.js",
     "compile": "webpack --config ./webpack.prod.config.js --progress --profile --colors",
-    "dist:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && node server.js",
+    "dist:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && node dist/server.js",
     "deploy:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile",
-    "deploy:now": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && now",
-    "start": "node server.js"
+    "start": "node public/server.js"
   },
   "dependencies": {
     "axios": "^0.9.1",

@@ -12,12 +12,13 @@ var _dotenv = require('dotenv');
 
 var _dotenv2 = _interopRequireDefault(_dotenv);
 
-var _Strava = require('./external/Strava');
+var _strava = require('./strava');
 
-var _Strava2 = _interopRequireDefault(_Strava);
+var _strava2 = _interopRequireDefault(_strava);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// Handle dev vs production path
 _dotenv2.default.config();
 
 // Import env vars
@@ -41,7 +42,7 @@ app.param('id', function (req, res, next, user) {
 // On request from the front end hit the Strava api
 app.get('/api/koms', function (req, res) {
   res.setHeader('Cache-Control', 'no-cache');
-  _Strava2.default.KOMs().then(function (response) {
+  _strava2.default.KOMs().then(function (response) {
     res.json(response.data);
   }).catch(function (error) {
     console.log(error);
