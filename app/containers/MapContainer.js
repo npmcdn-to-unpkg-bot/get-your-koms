@@ -20,15 +20,19 @@ class MapContainer extends React.Component {
     super();
     this.handleKomClick = this.handleKomClick.bind(this);
     this.state = {
-      center: [40, -76],
-      zoom: 12,
+      center: [40.157, -76.307],
+      zoom: 13,
       coordinates: [],
     };
   }
   handleKomClick() {
-    Requests.getKOMs().then((data) => {
-      this.setState({ coordinates: mapKOMs(data.data) });
-    });
+    Requests.apiKOMs()
+      .then((data) => {
+        this.setState({ coordinates: mapKOMs(data.data) });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
   render() {
     return (

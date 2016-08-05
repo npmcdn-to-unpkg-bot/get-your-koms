@@ -1,7 +1,7 @@
 {
   "name": "get-your-koms",
   "version": "0.0.1",
-  "description": "View Strava KOMs on a map.",
+  "description": "View Strava Data on a map.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brygrill/get-your-koms.git"
@@ -11,14 +11,19 @@
   "homepage": "",
   "main": "server.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --inline",
-    "dist": "webpack",
-    "deploy": "babel server/server.es6.js --presets es2015 --out-file server.js",
+    "clean": "rimraf public/*.css && rimraf public/*.js",
+    "dev": "webpack-dev-server --progress --inline --colors",
+    "babel:server": "babel server/server.es6.js --presets es2015 --out-file server.js",
+    "babel:external": "babel external/Strava.es6.js --presets es2015 --out-file external/Strava.js",
+    "compile": "webpack --config ./webpack.prod.config.js --progress --profile --colors",
+    "dist:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && node server.js",
+    "deploy:test": "npm run clean && npm run babel:server && npm run babel:external && npm run compile",
+    "deploy:now": "npm run clean && npm run babel:server && npm run babel:external && npm run compile && now",
     "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.9.1",
-    "compression": "^1.6.2",
+    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "leaflet": "^0.7.7",
     "react": "^15.0.1",
@@ -34,8 +39,10 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.9.0",
     "open-browser-webpack-plugin": "0.0.2",
+    "rimraf": "^2.5.4",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

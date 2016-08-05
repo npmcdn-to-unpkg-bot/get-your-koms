@@ -1,33 +1,42 @@
-const path = require('path');
-const express = require('express');
+// Import packages
+import path from 'path';
+import express from 'express';
+
+// Import env vars
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
-const axios = require('axios');
-const config = require('./config/config');
 
-app.use(express.static(path.join(__dirname, 'public')));
+// Import Strava API Handling
+import Strava from './external/Strava';
 
+// ==================
+// ROUTE API REQUESTS
+// ==================
 // Intercept request to get params
+let userID = null;
 app.param('id', (req, res, next, user) => {
-  req.user = user;
+  userID = user;
 });
 
 // On request from the front end hit the Strava api
-app.get('/api/athlete', (req, res) => {
+app.get('/api/koms', (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
-
-  axios.get('https://www.strava.com/api/v3/athletes/875993/koms', {
-    params: {
-      //id: req.user,
-      access_token: config.strava,
-    },
-  })
-  .then((response) => {
-    res.json(response.data);
-  })
-  .catch((error) => {
-    res.json(error);
-  });
+  Strava.KOMs()
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
+
+// ==================
+// ROUTE SITE TRAFFIC
+// ==================
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
@@ -35,6 +44,9 @@ app.get('*', (request, response) => {
   response.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
+// ==================
+// START SERVER
+// ==================
 app.listen(3000, () => {
   console.log('Serving on Port 3000');
 });

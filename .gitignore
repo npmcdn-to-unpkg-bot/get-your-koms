@@ -43,10 +43,12 @@ Thumbs.db
 # Folders to ignore
 bower_components
 node_modules
-config
 
 # Python
 *.pyc
 
 # Node
 npm-debug.log*
+
+# Secret
+*.env
